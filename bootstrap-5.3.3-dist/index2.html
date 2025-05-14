@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Control de Estado Firebase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f0f8ff;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #ESTADO_ID {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      color: #444;
+    }
+
+    .control {
+      display: grid;
+      grid-template-columns: 80px 80px 80px;
+      grid-template-rows: 80px 80px 80px;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+
+    .control button {
+      width: 80px;
+      height: 80px;
+      font-size: 14px;
+      border: none;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .control button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Control remoto desde Firebase</h1>
+  <h3 id="ESTADO_ID">ESTADO = </h3>
+
+  <div class="control">
+    <div></div>
+    <button onclick="enviarEstado(4)">↑<br>Avanzar</button>
+    <div></div>
+
+    <button onclick="enviarEstado(1)">←<br>Izquierda</button>
+    <button onclick="enviarEstado(2)">○<br>Neutral</button>
+    <button onclick="enviarEstado(3)">→<br>Derecha</button>
+
+    <div></div>
+    <button onclick="enviarEstado(5)">↓<br>Retroceder</button>
+    <div></div>
+  </div>
+
+  <script src="js/DMP.js"></script>
+</body>
+</html>
